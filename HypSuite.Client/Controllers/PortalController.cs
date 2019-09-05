@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -15,22 +15,7 @@ namespace HypSuite.Client.Controllers
             return View();
         }
 
-        public IActionResult ClientLogin()
-        {
-          return View();
-        }
-
-        public IActionResult AdminLogin()
-        {
-          return View();
-        }
-
-        public IActionResult About()
-        {
-          return View();
-        }
-
-        public IActionResult Privacy()
+        public IActionResult ClientPortal()
         {
           return View();
         }
