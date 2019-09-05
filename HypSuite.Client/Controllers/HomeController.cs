@@ -19,6 +19,11 @@ namespace HypSuite.Client.Controllers
         {
           return View();
         }
+        
+        public IActionResult ClientPortal()
+        {
+          return View();
+        }
 
         public IActionResult AdminLogin()
         {

@@ -20,6 +20,16 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        public IActionResult RegisterClient()
+        {
+          return View();
+        }
+
+        public IActionResult ClientInfo()
+        {
+          return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
