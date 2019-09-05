@@ -1,6 +1,6 @@
 using System;
 
-namespace Project2.Client.Models
+namespace HypSuite.Client.Models
 {
     public class ErrorViewModel
     {

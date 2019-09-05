@@ -8,7 +8,7 @@ using HypSuite.Client.Models;
 
 namespace HypSuite.Client.Controllers
 {
-    public class HomeController : Controller
+    public class PortalController : Controller
     {
         public IActionResult Index()
         {
