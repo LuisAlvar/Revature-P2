@@ -30,6 +30,12 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        [HttpGet]
+        public IActionResult AdminLogin(String username)
+        {
+          return RedirectToAction("AdminPortal");
+        }
+
         public IActionResult About()
         {
           return View();
