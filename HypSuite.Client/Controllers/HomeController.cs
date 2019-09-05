@@ -15,9 +15,14 @@ namespace Project2.Client.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+          return View();
+        }
+
         public IActionResult Privacy()
         {
-            return View();
+          return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
