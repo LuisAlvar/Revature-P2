@@ -20,8 +20,6 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
-        
-
         public IActionResult ClientPortal()
         {
           return View();

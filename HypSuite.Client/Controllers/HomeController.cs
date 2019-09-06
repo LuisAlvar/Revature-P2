@@ -19,6 +19,12 @@ namespace HypSuite.Client.Controllers
         {
           return View();
         }
+
+        [HttpPost]
+        public IActionResult ClientLogin(string test)
+        {
+          return RedirectToAction("ClientPortal", "Portal");
+        }
         
         public IActionResult ClientPortal()
         {
