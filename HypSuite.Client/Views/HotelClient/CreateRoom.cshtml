@@ -1,1 +1,40 @@
-<p>lpl</p>
+<form action="/HotelClient/CreateRoom" method="post">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Room #</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" maxlength="4">
+  </div>
+  <div class="form-group">
+  <label for="sel1">Max Capacity</label>
+    <select class="form-control" id="sel1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div> 
+  <div class="form-group">
+    <label for="sel1">Number of Beds</label>
+    <select class="form-control" id="sel1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </div> 
+  <div class="form-group">
+    <label for="sel1">Number of Bathrooms</label>
+    <select class="form-control" id="sel1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </div> 
+  <p>Smoking</p>
+  <div class="radio">
+    <label><input type="radio" name="optradio" checked> No</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio"> Yes</label>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Create Room</button>
+</form>

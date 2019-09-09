@@ -12,7 +12,7 @@ namespace HypSuite.Client.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+          return View();
         }
 
         public IActionResult ClientLogin()
@@ -41,9 +41,23 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        [HttpPost]
+        public IActionResult CreateRoom(string test)
+        {
+          // DB Logic
+          return RedirectToAction("ClientPortal");
+        }
+
         public IActionResult CreateLocation()
         {
           return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateLocation(string test)
+        {
+          // DB Logic
+          return RedirectToAction("ClientPortal");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
