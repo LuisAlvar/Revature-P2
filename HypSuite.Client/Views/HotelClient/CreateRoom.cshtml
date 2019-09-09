@@ -3,36 +3,37 @@
 <form action="/HotelClient/CreateRoom" method="post">
   <div class="form-group">
     <label for="RoomID">Room #</label>
-    <input type="text" class="form-control" id="RoomID" name="RoomID" maxlength="4">
+    <input type="text" class="form-control" id="RoomID" name="RoomID" maxlength="3">
   </div>
 
   <div class="form-group">
-    @Html.DropDownListFor(r => r.MaxCapacity,
-                          new SelectLis)
-  <label for="MaxCapacity">Max Capacity</label>
-    <select class="form-control" id="sel1">
-      <option>1</option>
+    <label for="MaxCapacity">Max Capacity</label>
+    <select class="form-control" id="MaxCapacity" name="MaxCapacity">
+      <option>1</option> 
       <option>2</option>
-      <option>3</option>
-      <option>4</option>
+      <option>3</option> 
+      <option>4</option>  
+    </select>
+  </div> 
+  
+  <!-- Fix Name -->
+  <div class="form-group">
+    <label for="NumberOfBeds">Number of Beds</label>
+    <select class="form-control" id="NumberOfBeds" name="NumberOfBeds">
+      <option>1</option> 
+      <option>2</option>
+      <option>3</option> 
+      <option>4</option>  
     </select>
   </div> 
 
-  <div class="form-group">
-    <label for="sel1">Number of Beds</label>
-    <select class="form-control" id="sel1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-    </select>
-  </div> 
 
   <div class="form-group">
-    <label for="sel1">Number of Bathrooms</label>
-    <select class="form-control" id="sel1">
-      <option>1</option>
+    <label for="NumberOfBathrooms">Number of Bathrooms</label>
+    <select class="form-control" id="NumberOfBathrooms" name="NumberOfBathrooms">
+      <option>1</option> 
       <option>2</option>
-      <option>3</option>
+      <option>3</option> 
     </select>
   </div> 
 

@@ -47,7 +47,9 @@ namespace HypSuite.Client.Controllers
         public IActionResult CreateRoom(Room room)
         {
           // DB Logic
-          System.Console.WriteLine("\n\n\n" + room.RoomID + "\n\n\n");
+          System.Console.WriteLine("\n\n\n" + room.RoomID);
+          System.Console.WriteLine(room.MaxCapacity);
+          System.Console.WriteLine(room.IsSmoking + "\n\n\n");
           return RedirectToAction("ClientPortal");
         }
 
