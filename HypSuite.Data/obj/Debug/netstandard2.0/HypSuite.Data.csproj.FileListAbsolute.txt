@@ -10,3 +10,15 @@
 /Users/Oscar/revature/Revature-P2/HypSuite.Data/obj/Debug/netstandard2.0/HypSuite.Data.csproj.CopyComplete
 /Users/Oscar/revature/Revature-P2/HypSuite.Data/obj/Debug/netstandard2.0/HypSuite.Data.dll
 /Users/Oscar/revature/Revature-P2/HypSuite.Data/obj/Debug/netstandard2.0/HypSuite.Data.pdb
+C:\Revature\Revature-P2\HypSuite.Data\bin\Debug\netstandard2.0\HypSuite.Data.deps.json
+C:\Revature\Revature-P2\HypSuite.Data\bin\Debug\netstandard2.0\HypSuite.Data.dll
+C:\Revature\Revature-P2\HypSuite.Data\bin\Debug\netstandard2.0\HypSuite.Data.pdb
+C:\Revature\Revature-P2\HypSuite.Data\bin\Debug\netstandard2.0\HypSuite.Domain.dll
+C:\Revature\Revature-P2\HypSuite.Data\bin\Debug\netstandard2.0\HypSuite.Domain.pdb
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.csprojAssemblyReference.cache
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.csproj.CoreCompileInputs.cache
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.AssemblyInfoInputs.cache
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.AssemblyInfo.cs
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.csproj.CopyComplete
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.dll
+C:\Revature\Revature-P2\HypSuite.Data\obj\Debug\netstandard2.0\HypSuite.Data.pdb

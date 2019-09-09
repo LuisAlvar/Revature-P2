@@ -36,6 +36,16 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        public IActionResult CreateRoom()
+        {
+          return View();
+        }
+
+        public IActionResult CreateLocation()
+        {
+          return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

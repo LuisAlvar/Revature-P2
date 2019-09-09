@@ -7,3 +7,12 @@
 /Users/Oscar/revature/Revature-P2/HypSuite.Domain/obj/Debug/netstandard2.0/HypSuite.Domain.AssemblyInfo.cs
 /Users/Oscar/revature/Revature-P2/HypSuite.Domain/obj/Debug/netstandard2.0/HypSuite.Domain.dll
 /Users/Oscar/revature/Revature-P2/HypSuite.Domain/obj/Debug/netstandard2.0/HypSuite.Domain.pdb
+C:\Revature\Revature-P2\HypSuite.Domain\bin\Debug\netstandard2.0\HypSuite.Domain.deps.json
+C:\Revature\Revature-P2\HypSuite.Domain\bin\Debug\netstandard2.0\HypSuite.Domain.dll
+C:\Revature\Revature-P2\HypSuite.Domain\bin\Debug\netstandard2.0\HypSuite.Domain.pdb
+C:\Revature\Revature-P2\HypSuite.Domain\obj\Debug\netstandard2.0\HypSuite.Domain.csprojAssemblyReference.cache
+C:\Revature\Revature-P2\HypSuite.Domain\obj\Debug\netstandard2.0\HypSuite.Domain.csproj.CoreCompileInputs.cache
+C:\Revature\Revature-P2\HypSuite.Domain\obj\Debug\netstandard2.0\HypSuite.Domain.AssemblyInfoInputs.cache
+C:\Revature\Revature-P2\HypSuite.Domain\obj\Debug\netstandard2.0\HypSuite.Domain.AssemblyInfo.cs
+C:\Revature\Revature-P2\HypSuite.Domain\obj\Debug\netstandard2.0\HypSuite.Domain.dll
+C:\Revature\Revature-P2\HypSuite.Domain\obj\Debug\netstandard2.0\HypSuite.Domain.pdb
