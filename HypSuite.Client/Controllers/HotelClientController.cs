@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HypSuite.Client.Models;
+using HypSuite.Domain.Models;
 
 namespace HypSuite.Client.Controllers
 {
@@ -43,9 +44,10 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateRoom(string test)
+        public IActionResult CreateRoom(Room room)
         {
           // DB Logic
+          System.Console.WriteLine("\n\n\n" + room.RoomID + "\n\n\n");
           return RedirectToAction("ClientPortal");
         }
 
@@ -60,7 +62,7 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateLocation(string test)
+        public IActionResult CreateLocation(Location location)
         {
           // DB Logic
           return RedirectToAction("ClientPortal");

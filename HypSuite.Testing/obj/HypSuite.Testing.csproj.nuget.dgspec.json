@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Revature\\Project2\\HypSuite.Testing\\HypSuite.Testing.csproj": {}
+    "C:\\Revature\\Revature-P2\\HypSuite.Testing\\HypSuite.Testing.csproj": {}
   },
   "projects": {
-    "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
+    "C:\\Revature\\Revature-P2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj",
+        "projectUniqueName": "C:\\Revature\\Revature-P2\\HypSuite.Domain\\HypSuite.Domain.csproj",
         "projectName": "HypSuite.Domain",
-        "projectPath": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj",
+        "projectPath": "C:\\Revature\\Revature-P2\\HypSuite.Domain\\HypSuite.Domain.csproj",
         "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-        "outputPath": "C:\\Revature\\Project2\\HypSuite.Domain\\obj\\",
+        "outputPath": "C:\\Revature\\Revature-P2\\HypSuite.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -60,14 +60,14 @@
         }
       }
     },
-    "C:\\Revature\\Project2\\HypSuite.Testing\\HypSuite.Testing.csproj": {
+    "C:\\Revature\\Revature-P2\\HypSuite.Testing\\HypSuite.Testing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Revature\\Project2\\HypSuite.Testing\\HypSuite.Testing.csproj",
+        "projectUniqueName": "C:\\Revature\\Revature-P2\\HypSuite.Testing\\HypSuite.Testing.csproj",
         "projectName": "HypSuite.Testing",
-        "projectPath": "C:\\Revature\\Project2\\HypSuite.Testing\\HypSuite.Testing.csproj",
+        "projectPath": "C:\\Revature\\Revature-P2\\HypSuite.Testing\\HypSuite.Testing.csproj",
         "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-        "outputPath": "C:\\Revature\\Project2\\HypSuite.Testing\\obj\\",
+        "outputPath": "C:\\Revature\\Revature-P2\\HypSuite.Testing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -86,8 +86,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
-                "projectPath": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj"
+              "C:\\Revature\\Revature-P2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
+                "projectPath": "C:\\Revature\\Revature-P2\\HypSuite.Domain\\HypSuite.Domain.csproj"
               }
             }
           }

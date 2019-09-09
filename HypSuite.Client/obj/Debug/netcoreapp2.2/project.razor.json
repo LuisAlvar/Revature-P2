@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Revature\\Project2\\HypSuite.Client\\HypSuite.Client.csproj",
+  "FilePath": "c:\\Revature\\Revature-P2\\HypSuite.Client\\HypSuite.Client.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2976,6 +2976,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\HotelClient\\UpdateRooms.cshtml",
+      "TargetPath": "Views\\HotelClient\\UpdateRooms.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -3028,6 +3033,16 @@
     {
       "FilePath": "Views\\Admin\\AdminLogin.cshtml",
       "TargetPath": "Views\\Admin\\AdminLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\HotelClient\\CreateLocation.cshtml",
+      "TargetPath": "Views\\HotelClient\\CreateLocation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\HotelClient\\CreateRoom.cshtml",
+      "TargetPath": "Views\\HotelClient\\CreateRoom.cshtml",
       "FileKind": "mvc"
     },
     {
