@@ -1,0 +1,11 @@
+@model HypSuite.Domain.Models.Room
+
+<h1>Here is a list of available rooms within the region you selected: </h1>
+<br><br>
+<h3>Available locations:</h3>
+@foreach (var item in Model.Available)
+{
+    <form action="/Guest/ViewRooms" method="post">
+            @Html.RadioButton("Location", @item)
+    </form>
+}

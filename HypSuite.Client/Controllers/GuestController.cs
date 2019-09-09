@@ -29,12 +29,12 @@ namespace HypSuite.Client.Controllers
           Current = new Reservation();
           Current.HotelsLocation = new Location();
           Current.HotelsLocation.Nearby = new List<Location>();
-          // foreach (var l in _db.Locations)
-          // {
-          //   if(location == l.State){
-          //     Current.HotelsLocation.Nearby.Add(l);
-          //   }           
-          // }
+          foreach (var l in _db.Locations)
+          {
+            if(location == l.State){
+              Current.HotelsLocation.Nearby.Add(l);
+            }           
+          }
 
           return View(Current.HotelsLocation);
         }
@@ -42,11 +42,24 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult ViewLocations(Location lo)
         {
+          Current.HotelsLocation = lo;
           return RedirectToAction("ViewRooms");
         }
 
         public IActionResult ViewRooms()
         {
+          Room r = new Room();
+          r.Available = new List<Room>();
+          foreach(var v in _db.Rooms)
+          {
+            if(v.LocationID == Current.HotelsLocation.LocationID)
+            {
+              if(v.IsOccupied == false)
+              {
+                r.Available.Add(v);
+              }
+            }
+          }
           return View();
         }
         [HttpPost]
@@ -64,3 +77,9 @@ namespace HypSuite.Client.Controllers
         }
     }
 }
+
+
+
+
+
+
