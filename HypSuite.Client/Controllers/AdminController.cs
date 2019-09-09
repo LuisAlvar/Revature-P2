@@ -18,6 +18,7 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult AdminLogin(String username)
         {
+          // DB Logic
           return RedirectToAction("AdminPortal");
         }
 
