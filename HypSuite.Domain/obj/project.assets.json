@@ -2572,30 +2572,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dan\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/Oscar/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj",
+      "projectUniqueName": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj",
       "projectName": "HypSuite.Domain",
-      "projectPath": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj",
-      "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-      "outputPath": "C:\\Revature\\Project2\\HypSuite.Domain\\obj\\",
+      "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj",
+      "packagesPath": "/Users/Oscar/.nuget/packages/",
+      "outputPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/Oscar/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

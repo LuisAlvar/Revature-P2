@@ -1,40 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Revature\\Project2\\HypSuite.Client\\HypSuite.Client.csproj": {}
+    "/Users/Oscar/revature/Revature-P2/HypSuite.Client/HypSuite.Client.csproj": {}
   },
   "projects": {
-    "C:\\Revature\\Project2\\HypSuite.Client\\HypSuite.Client.csproj": {
+    "/Users/Oscar/revature/Revature-P2/HypSuite.Client/HypSuite.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Revature\\Project2\\HypSuite.Client\\HypSuite.Client.csproj",
+        "projectUniqueName": "/Users/Oscar/revature/Revature-P2/HypSuite.Client/HypSuite.Client.csproj",
         "projectName": "HypSuite.Client",
-        "projectPath": "C:\\Revature\\Project2\\HypSuite.Client\\HypSuite.Client.csproj",
-        "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-        "outputPath": "C:\\Revature\\Project2\\HypSuite.Client\\obj\\",
+        "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Client/HypSuite.Client.csproj",
+        "packagesPath": "/Users/Oscar/.nuget/packages/",
+        "outputPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/Oscar/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Revature\\Project2\\HypSuite.Data\\HypSuite.Data.csproj": {
-                "projectPath": "C:\\Revature\\Project2\\HypSuite.Data\\HypSuite.Data.csproj"
+              "/Users/Oscar/revature/Revature-P2/HypSuite.Data/HypSuite.Data.csproj": {
+                "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Data/HypSuite.Data.csproj"
               },
-              "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
-                "projectPath": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj"
+              "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj": {
+                "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj"
               }
             }
           }
@@ -74,34 +72,32 @@
         }
       }
     },
-    "C:\\Revature\\Project2\\HypSuite.Data\\HypSuite.Data.csproj": {
+    "/Users/Oscar/revature/Revature-P2/HypSuite.Data/HypSuite.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Revature\\Project2\\HypSuite.Data\\HypSuite.Data.csproj",
+        "projectUniqueName": "/Users/Oscar/revature/Revature-P2/HypSuite.Data/HypSuite.Data.csproj",
         "projectName": "HypSuite.Data",
-        "projectPath": "C:\\Revature\\Project2\\HypSuite.Data\\HypSuite.Data.csproj",
-        "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-        "outputPath": "C:\\Revature\\Project2\\HypSuite.Data\\obj\\",
+        "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Data/HypSuite.Data.csproj",
+        "packagesPath": "/Users/Oscar/.nuget/packages/",
+        "outputPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Data/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/Oscar/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
-                "projectPath": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj"
+              "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj": {
+                "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj"
               }
             }
           }
@@ -148,27 +144,25 @@
         }
       }
     },
-    "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj": {
+    "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj",
+        "projectUniqueName": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj",
         "projectName": "HypSuite.Domain",
-        "projectPath": "C:\\Revature\\Project2\\HypSuite.Domain\\HypSuite.Domain.csproj",
-        "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-        "outputPath": "C:\\Revature\\Project2\\HypSuite.Domain\\obj\\",
+        "projectPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/HypSuite.Domain.csproj",
+        "packagesPath": "/Users/Oscar/.nuget/packages/",
+        "outputPath": "/Users/Oscar/revature/Revature-P2/HypSuite.Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/Oscar/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
