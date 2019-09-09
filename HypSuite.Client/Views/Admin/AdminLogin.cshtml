@@ -1,0 +1,31 @@
+@section AddToHead{
+  <link href="@Url.Content("~/css/AdminLogin.css")" rel="stylesheet" type="text/css" />
+}
+
+<form action="/Admin/AdminLogin" method="post">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <br>
+        <img src="https://i.imgur.com/8HKxxru.png" id="icon" alt="User Icon" />
+        <p>Administrator Login</p>
+      </div>
+      <br>
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+    </div>
+  </div>
+</form>

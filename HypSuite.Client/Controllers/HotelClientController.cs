@@ -8,14 +8,30 @@ using HypSuite.Client.Models;
 
 namespace HypSuite.Client.Controllers
 {
-    public class PortalController : Controller
+    public class HotelClientController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
 
+        public IActionResult ClientLogin()
+        {
+          return View();
+        }
+
+        [HttpPost]
+        public IActionResult ClientLogin(string test)
+        {
+          return RedirectToAction("ClientPortal");
+        }
+
         public IActionResult ClientPortal()
+        {
+          return View();
+        }
+
+        public IActionResult ClientInfo()
         {
           return View();
         }

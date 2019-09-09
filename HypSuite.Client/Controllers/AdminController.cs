@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,21 +8,34 @@ using HypSuite.Client.Models;
 
 namespace HypSuite.Client.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult About()
+        public IActionResult AdminLogin()
         {
           return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult AdminLogin(String username)
+        {
+          return RedirectToAction("AdminPortal");
+        }
+
+        public IActionResult AdminPortal()
         {
           return View();
+        }
+
+        public IActionResult RegisterClient()
+        {
+          return View();
+        }
+
+        [HttpPost]
+        public IActionResult RegisterClient(string test)
+        {
+          // Add DB logic
+          return RedirectToAction("AdminPortal");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
