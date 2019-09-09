@@ -48,6 +48,11 @@ namespace HypSuite.Client.Controllers
           return RedirectToAction("ClientPortal");
         }
 
+        public IActionResult UpdateRooms()
+        {
+          return View();
+        }
+
         public IActionResult CreateLocation()
         {
           return View();

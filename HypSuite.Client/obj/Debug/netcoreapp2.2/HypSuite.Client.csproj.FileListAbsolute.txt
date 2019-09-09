@@ -79,3 +79,4 @@ C:\Revature\Revature-P2\HypSuite.Client\obj\Debug\netcoreapp2.2\HypSuite.Client.
 C:\Revature\Revature-P2\HypSuite.Client\obj\Debug\netcoreapp2.2\HypSuite.Client.csproj.CopyComplete
 C:\Revature\Revature-P2\HypSuite.Client\obj\Debug\netcoreapp2.2\HypSuite.Client.dll
 C:\Revature\Revature-P2\HypSuite.Client\obj\Debug\netcoreapp2.2\HypSuite.Client.pdb
+C:\Revature\Revature-P2\HypSuite.Client\obj\Debug\netcoreapp2.2\Razor\Views\HotelClient\UpdateRooms.g.cshtml.cs
