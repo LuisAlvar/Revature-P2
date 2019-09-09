@@ -1,15 +1,20 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace HypSuite.Domain.Models
 {
     public class Employee
     {
+        [Key]
         public int EmployeeID { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName {get;set;}
+        [Required]
         public string Username{get;set;}
+        [Required]
         public string Password {get;set;}
-
-        public string Street {get;set;}
-        public string City {get;set;}
-        public string State {get;set;}
+        [Required]
+        public string Position {get;set;}
     }
 }

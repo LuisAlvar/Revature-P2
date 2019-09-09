@@ -1,15 +1,16 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace HypSuite.Domain.Models
 {
     public class HotelClient
     {
+        [Key]
         public int ClientID { get; set; }
-        public List<Room> Rooms {get;set;}
+        [Required]
+        public string Name{get;set;}
         public List<Reservation> ReservationHistory { get; set; }
         public List<Guest> GuestList {get;set;}
-        public int NumberOfFloors {get;set;}
-        public int RoomsPerFloor {get;set;}
         public List<Location> Locations {get;set;}
     }
 }
