@@ -23,6 +23,7 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult ClientLogin(string test)
         {
+          // DB Logic
           return RedirectToAction("ClientPortal");
         }
 
