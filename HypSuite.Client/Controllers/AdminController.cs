@@ -26,6 +26,18 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        public IActionResult RegisterClient()
+        {
+          return View();
+        }
+
+        [HttpPost]
+        public IActionResult RegisterClient(string test)
+        {
+          // Add DB logic
+          return RedirectToAction("AdminPortal");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
