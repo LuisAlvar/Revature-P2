@@ -12,5 +12,7 @@ namespace HypSuite.Domain.Models
         public List<Reservation> ReservationHistory { get; set; }
         public List<Guest> GuestList {get;set;}
         public List<Location> Locations {get;set;}
+        public string PhoneNumber{get;set;}
+        public string Email {get;set;}
     }
 }

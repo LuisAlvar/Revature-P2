@@ -4,20 +4,40 @@ using HypSuite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HypSuite.Data.Migrations
 {
     [DbContext(typeof(HypSuiteDBContext))]
-    partial class HypSuiteDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190909205253_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("HypSuite.Domain.Models.Bed", b =>
+                {
+                    b.Property<int>("BedID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BedSize")
+                        .IsRequired();
+
+                    b.Property<int?>("RoomID");
+
+                    b.HasKey("BedID");
+
+                    b.HasIndex("RoomID");
+
+                    b.ToTable("Beds");
+                });
 
             modelBuilder.Entity("HypSuite.Domain.Models.Guest", b =>
                 {
@@ -141,8 +161,6 @@ namespace HypSuite.Data.Migrations
 
                     b.Property<int>("NumberOfBathrooms");
 
-                    b.Property<int>("NumberOfBeds");
-
                     b.Property<int?>("ReservationID");
 
                     b.Property<int>("SizeSqFt");
@@ -154,6 +172,13 @@ namespace HypSuite.Data.Migrations
                     b.HasIndex("ReservationID");
 
                     b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("HypSuite.Domain.Models.Bed", b =>
+                {
+                    b.HasOne("HypSuite.Domain.Models.Room")
+                        .WithMany("Beds")
+                        .HasForeignKey("RoomID");
                 });
 
             modelBuilder.Entity("HypSuite.Domain.Models.Guest", b =>
