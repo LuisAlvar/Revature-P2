@@ -19,9 +19,6 @@
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/HypSuite.Client.TagHelpers.output.cache
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/HypSuite.Client.RazorCoreGenerate.cache
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Home/About.g.cshtml.cs
-/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Home/AdminLogin.g.cshtml.cs
-/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Home/ClientLogin.g.cshtml.cs
-/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Home/ClientPortal.g.cshtml.cs
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Home/Privacy.g.cshtml.cs
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs
@@ -36,3 +33,12 @@
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/HypSuite.Client.csproj.CopyComplete
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/HypSuite.Client.dll
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/HypSuite.Client.pdb
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Admin/AdminLogin.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Admin/AdminPortal.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Admin/RegisterClient.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Guest/ChooseRegion.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Guest/ViewLocations.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Guest/ViewRooms.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/HotelClient/ClientInfo.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/HotelClient/ClientLogin.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/HotelClient/ClientPortal.g.cshtml.cs

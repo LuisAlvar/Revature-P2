@@ -1,0 +1,12 @@
+@model HypSuite.Domain.Models.Location
+
+<h1>Here is our Location choices for you:</h1>
+<br><br>
+<form action="/Guest/ViewLocations" method ="post">
+  <fieldset name="Radiobutton">
+    @foreach (var v in Model.Nearby){
+    <label for="Location"><input type ="radio" id = "Location" name="Street" value="@v.Street">@v.Street</label><br>
+    }
+  </fieldset>
+  <button type="submit">Next</button>
+</form>

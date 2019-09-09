@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HypSuite.Domain.Models
 {
@@ -16,6 +17,8 @@ namespace HypSuite.Domain.Models
         public List<Room> Rooms { get; set; }
         [Required]
         public int NumberOfFloors { get; set; }
+        [NotMapped]
+        public List<Location> Nearby {get;set;}
 
         public override string ToString()
         {

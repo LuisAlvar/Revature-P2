@@ -11,7 +11,7 @@ namespace HypSuite.Data
     public DbSet<Location> Locations {get;set;}
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
-      builder.UseSqlServer("server=;initial catalog=;user id=;password=");
+      builder.UseSqlServer("server=localhost;initial catalog=HypSuite;user id=sa;password=Password12345");
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
