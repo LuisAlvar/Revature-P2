@@ -2966,8 +2966,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Admin\\AdminPortal.cshtml",
+      "TargetPath": "Views\\Admin\\AdminPortal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Admin\\RegisterClient.cshtml",
+      "TargetPath": "Views\\Admin\\RegisterClient.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\HotelClient\\ClientInfo.cshtml",
+      "TargetPath": "Views\\HotelClient\\ClientInfo.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2981,13 +2996,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\HotelClient\\ClientPortal.cshtml",
+      "TargetPath": "Views\\HotelClient\\ClientPortal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Portal\\RegisterClient.cshtml",
-      "TargetPath": "Views\\Portal\\RegisterClient.cshtml",
+      "FilePath": "Views\\HotelClient\\ClientLogin.cshtml",
+      "TargetPath": "Views\\HotelClient\\ClientLogin.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3006,33 +3026,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\ClientLogin.cshtml",
-      "TargetPath": "Views\\Home\\ClientLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Portal\\ClientPortal.cshtml",
-      "TargetPath": "Views\\Portal\\ClientPortal.cshtml",
+      "FilePath": "Views\\Admin\\AdminLogin.cshtml",
+      "TargetPath": "Views\\Admin\\AdminLogin.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Home\\AdminLogin.cshtml",
-      "TargetPath": "Views\\Home\\AdminLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Portal\\AdminPortal.cshtml",
-      "TargetPath": "Views\\Portal\\AdminPortal.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Portal\\ClientInfo.cshtml",
-      "TargetPath": "Views\\Portal\\ClientInfo.cshtml",
       "FileKind": "mvc"
     }
   ],
