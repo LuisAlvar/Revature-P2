@@ -42,3 +42,5 @@
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/HotelClient/ClientInfo.g.cshtml.cs
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/HotelClient/ClientLogin.g.cshtml.cs
 /Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/HotelClient/ClientPortal.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Guest/AddMore.g.cshtml.cs
+/Users/Oscar/revature/Revature-P2/HypSuite.Client/obj/Debug/netcoreapp2.2/Razor/Views/Guest/ViewReservation.g.cshtml.cs

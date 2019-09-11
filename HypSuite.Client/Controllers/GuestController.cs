@@ -60,12 +60,29 @@ namespace HypSuite.Client.Controllers
               }
             }
           }
-          return View();
+          return View(r);
         }
         [HttpPost]
         public IActionResult ViewRooms(Room r)
         {
-          return RedirectToAction("MakeReservation");
+          foreach (var item in _db.Rooms)
+          {
+              if(item.RoomID == r.RoomID)
+              {
+                Current.Rooms.Add(r);
+              }
+          }
+          return RedirectToAction("AddMore");
+        }
+
+        public IActionResult AddMore()
+        {
+          return View();
+        }
+
+        public IActionResult ViewReservation()
+        {
+          return View(Current);
         }
         
         
