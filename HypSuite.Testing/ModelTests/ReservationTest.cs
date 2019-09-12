@@ -1,4 +1,4 @@
-using System.xunit;
+using Xunit;
 
 namespace HypSuite.Testing.ModelTests
 {
