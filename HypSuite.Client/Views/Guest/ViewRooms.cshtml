@@ -2,9 +2,11 @@
 
 <h3>Here is a list of available rooms within the region you selected: </h3>
 <br><br>
-@foreach (var item in Model.Available)
-{
-    <form action="/Guest/ViewRooms" method="post">
-            @Html.RadioButton("RoomID", @item)
-    </form>
-}
+<form action="/Guest/ViewRooms" method="post">
+  <label id="RoomID">Available Rooms:</label><br>
+  @foreach (var item in Model.Available)
+  {
+      @Html.RadioButton("RoomID", @item)
+  }
+<button type="submit">Next</button>
+</form>

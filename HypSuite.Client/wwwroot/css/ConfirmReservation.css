@@ -1,0 +1,16 @@
+body
+{
+  background-repeat:no-repeat;
+  background-position: center; 
+}
+
+h1,h3
+{
+  color: white;
+  text-shadow: 2px 2px 10px #000000;
+}
+div 
+{
+  background: lightgrey;
+  opacity: 0.8;
+}

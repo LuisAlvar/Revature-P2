@@ -84,6 +84,11 @@ namespace HypSuite.Client.Controllers
         {
           return View(Current);
         }
+
+        public IActionResult ConfirmReservation()
+        {
+          return View(Current);
+        }
         
         
         
