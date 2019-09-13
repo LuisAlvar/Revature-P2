@@ -89,6 +89,30 @@ namespace HypSuite.Client.Controllers
         {
           return View(Current);
         }
+
+        public IActionResult RemoveRoom()
+        {
+          if(Current.Rooms.Capacity == 0)
+          {
+            return RedirectToAction("ViewRooms");
+          }
+          else if(Current.Rooms.FindLastIndex(r => r != null) == 0)
+          {
+            Current.Rooms.RemoveAt(0);
+            return RedirectToAction("ViewRooms");
+          }
+          else 
+          {
+            return View(Current);
+          }
+        }
+
+        [HttpDelete]
+        public IActionResult RemoveRoom(int RoomID)
+        {
+          return View();
+        }
+        
         
         
         
