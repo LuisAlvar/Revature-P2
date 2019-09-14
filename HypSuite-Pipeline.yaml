@@ -88,7 +88,7 @@ stages:
         displayName: 'deploy-process'
         pool:
           vmImage: 'ubuntu-16.04'
-        steps:
+       # steps:
           # - task: AzureWebAppContainer@1
           #   inputs:
           #     azureSubscription: 'revature(xyz)(eb8964dc-9fbc-4999-8360-6d5e23316e15)'
