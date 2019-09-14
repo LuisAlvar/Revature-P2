@@ -23,7 +23,7 @@ namespace HypSuite.Client.Controllers
         { 
           foreach (var u in _db.Admin)
           {
-            if(u.Username == admin.Username && admin.Username.Contains("Manager")){
+            if(u.Username == admin.Username){
               return RedirectToAction("AdminPortal");
             }
           }
@@ -55,7 +55,7 @@ namespace HypSuite.Client.Controllers
             return View();
           }
           
-          return RedirectToAction("AdminPortal");
+          return RedirectToAction("ClientPortal");
         }
           return View(); 
         }

@@ -12,9 +12,14 @@ namespace HypSuite.Domain.Models
         public string City {get;set;}
         [Required]
         public string State { get; set; }
-        [Key]
-        [ForeignKey("LocationID")]
+        [Required]
+        public string ZipCode { get; set; }
+        
         public int LocationID { get; set; }
+        
+        [ForeignKey("ClientID")]
+        public int ClientID { get; set; }
+
         public List<Room> Rooms { get; set; }
         [Required]
         [NotMapped]

@@ -4,14 +4,16 @@ using HypSuite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HypSuite.Data.Migrations
 {
     [DbContext(typeof(HypSuiteDBContext))]
-    partial class HypSuiteDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190914030756_sixth")]
+    partial class sixth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,7 +107,7 @@ namespace HypSuite.Data.Migrations
                     b.Property<string>("City")
                         .IsRequired();
 
-                    b.Property<int>("ClientID");
+                    b.Property<int?>("HotelClientClientID");
 
                     b.Property<string>("State")
                         .IsRequired();
@@ -118,7 +120,7 @@ namespace HypSuite.Data.Migrations
 
                     b.HasKey("LocationID");
 
-                    b.HasIndex("ClientID");
+                    b.HasIndex("HotelClientClientID");
 
                     b.ToTable("Locations");
                 });
@@ -201,8 +203,7 @@ namespace HypSuite.Data.Migrations
                 {
                     b.HasOne("HypSuite.Domain.Models.HotelClient")
                         .WithMany("Locations")
-                        .HasForeignKey("ClientID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("HotelClientClientID");
                 });
 
             modelBuilder.Entity("HypSuite.Domain.Models.Reservation", b =>

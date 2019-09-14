@@ -22,6 +22,7 @@ namespace HypSuite.Domain.Models
         public bool IsOccupied {get;set;}
         [NotMapped]
         public List<Room> Available {get;set;}
+        [ForeignKey("ClientID")]
         public int LocationID { get; set; }
 
         public override string ToString()

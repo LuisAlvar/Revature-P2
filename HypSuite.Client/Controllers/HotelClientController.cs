@@ -12,6 +12,7 @@ namespace HypSuite.Client.Controllers
 {
     public class HotelClientController : Controller
     {
+      public static HotelClient CurrentClient {get;set;}
       private HypSuiteDBContext _db = new HypSuiteDBContext();
         public IActionResult Index()
         {
@@ -29,6 +30,11 @@ namespace HypSuite.Client.Controllers
           foreach (var u in _db.Clients)
           {
             if(u.Name == client.Name){
+              CurrentClient = new HotelClient();
+              CurrentClient.Name = client.Name;
+              CurrentClient.ClientID = u.ClientID;
+              CurrentClient.Email = client.Email;
+              CurrentClient.PhoneNumber = client.PhoneNumber; 
               return RedirectToAction("ClientPortal");
             }
           }
@@ -90,6 +96,7 @@ namespace HypSuite.Client.Controllers
           if(ModelState.IsValid)
         {
           try{
+              location.ClientID = CurrentClient.ClientID;
               _db.Locations.Add(location);
               _db.SaveChanges();  
           }

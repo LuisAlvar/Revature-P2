@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HypSuite.Domain.Models
 {
     public class HotelClient
     {
-        [Key]
         public int ClientID { get; set; }
         [Required]
         public string Name{get;set;}

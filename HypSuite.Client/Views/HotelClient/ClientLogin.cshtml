@@ -1,7 +1,8 @@
+@model HypSuite.Domain.Models.HotelClient
 @section AddToHead{
   <link href="@Url.Content("~/css/ClientLogin.css")" rel="stylesheet" type="text/css" />
 }
-<form action="ClientLogin" method="post"> 
+<form action="/HotelClient/ClientLogin" method="post"> 
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
@@ -14,9 +15,9 @@
       <br>
       <!-- Login Form -->
       <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <input type="text" id="login" class="fadeIn second" name="Name" placeholder="Name">
+        <input type="text" id="password" class="fadeIn third" name="Password" placeholder="Password">
+        <button type="submit" class="btn btn-primary">Login</button>
       </form>
 
       <!-- Remind Passowrd -->
