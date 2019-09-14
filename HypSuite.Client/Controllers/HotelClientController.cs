@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HypSuite.Client.Models;
 using HypSuite.Domain.Models;
+using HypSuite.Data;
 
 namespace HypSuite.Client.Controllers
 {
     public class HotelClientController : Controller
     {
+      private HypSuiteDBContext _db = new HypSuiteDBContext();
         public IActionResult Index()
         {
           return View();
@@ -66,8 +68,20 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult CreateLocation(Location location)
         {
-          // DB Logic
-          return RedirectToAction("ClientPortal");
+          if(ModelState.IsValid)
+        {
+          try{
+              _db.Locations.Add(location);
+              _db.SaveChanges();  
+          }
+          catch
+          {
+            return RedirectToAction("WrongInput","Pizza");
+          }
+          
+          return RedirectToAction("Index","Pizza");
+        }
+          return View(); 
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
