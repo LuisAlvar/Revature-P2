@@ -24,10 +24,15 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpPost]
-        public IActionResult ClientLogin(string test)
+        public IActionResult ClientLogin(HotelClient client)
         {
-          // DB Logic
-          return RedirectToAction("ClientPortal");
+          foreach (var u in _db.Clients)
+          {
+            if(u.Name == client.Name){
+              return RedirectToAction("ClientPortal");
+            }
+          }
+          return View();
         }
 
         public IActionResult ClientPortal()
@@ -48,11 +53,25 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult CreateRoom(Room room)
         {
+          if(ModelState.IsValid)
+          {
+            try{
+                _db.Rooms.Add(room);
+                _db.SaveChanges();  
+            }
+            catch
+            {
+              return View();
+            }
+          
+            return RedirectToAction("ClientPortal");
+          }
+          return View(); 
+          
           // DB Logic
-          System.Console.WriteLine("\n\n\n" + room.RoomID);
-          System.Console.WriteLine(room.MaxCapacity);
-          System.Console.WriteLine(room.IsSmoking + "\n\n\n");
-          return RedirectToAction("ClientPortal");
+          // System.Console.WriteLine("\n\n\n" + room.RoomID);
+          // System.Console.WriteLine(room.MaxCapacity);
+          // System.Console.WriteLine(room.IsSmoking + "\n\n\n");
         }
 
         public IActionResult UpdateRooms()
@@ -76,10 +95,10 @@ namespace HypSuite.Client.Controllers
           }
           catch
           {
-            return RedirectToAction("WrongInput","Pizza");
+            return View();
           }
           
-          return RedirectToAction("Index","Pizza");
+          return RedirectToAction("CreateRoom");
         }
           return View(); 
         }

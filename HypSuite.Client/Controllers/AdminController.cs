@@ -5,21 +5,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HypSuite.Client.Models;
+using HypSuite.Data;
+using HypSuite.Domain.Models;
 
 namespace HypSuite.Client.Controllers
 {
     public class AdminController : Controller
     {
+        private HypSuiteDBContext _db = new HypSuiteDBContext();
         public IActionResult AdminLogin()
         {
           return View();
         }
 
         [HttpPost]
-        public IActionResult AdminLogin(String username)
-        {
-          // DB Logic
-          return RedirectToAction("AdminPortal");
+        public IActionResult AdminLogin(Employee admin)
+        { 
+          foreach (var u in _db.Admin)
+          {
+            if(u.Username == admin.Username && admin.Username.Contains("Manager")){
+              return RedirectToAction("AdminPortal");
+            }
+          }
+        
+          return View();
         }
 
         public IActionResult AdminPortal()
@@ -33,10 +42,22 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegisterClient(string test)
+        public IActionResult RegisterClient(HotelClient test)
         {
-          // Add DB logic
+          if(ModelState.IsValid)
+        {
+          try{
+              _db.Clients.Add(test);
+              _db.SaveChanges();  
+          }
+          catch
+          {
+            return View();
+          }
+          
           return RedirectToAction("AdminPortal");
+        }
+          return View(); 
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
