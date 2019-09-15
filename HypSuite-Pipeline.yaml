@@ -88,12 +88,12 @@ stages:
         displayName: 'deploy-process'
         pool:
           vmImage: 'ubuntu-16.04'
-       # steps:
-          # - task: AzureWebAppContainer@1
-          #   inputs:
-          #     azureSubscription: 'revature(xyz)(eb8964dc-9fbc-4999-8360-6d5e23316e15)'
-          #     appName: 'devopsdemo201909'
-          #     containers: 'fredbelotte/devopsdemo'
+       steps:
+          - task: AzureWebAppContainer@1
+            inputs:
+              azureSubscription: 'Azure subscription 1(0af1c692-8526-4505-808a-01504f95a460)'
+              appName: 'HypSuite'
+              containers: 'dghazvini/hypsuite'
 
 trigger:
   branches:
