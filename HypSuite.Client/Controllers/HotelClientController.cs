@@ -62,6 +62,7 @@ namespace HypSuite.Client.Controllers
           if(ModelState.IsValid)
           {
             try{
+                //room.LocationID = CurrentClient.;
                 _db.Rooms.Add(room);
                 _db.SaveChanges();  
             }
@@ -87,27 +88,24 @@ namespace HypSuite.Client.Controllers
 
         public IActionResult CreateLocation()
         {
-          return View();
+          Location l = new Location();
+          return View(l);
         }
 
         [HttpPost]
         public IActionResult CreateLocation(Location location)
         {
-          if(ModelState.IsValid)
-        {
-          try{
-              location.ClientID = CurrentClient.ClientID;
-              _db.Locations.Add(location);
-              _db.SaveChanges();  
-          }
-          catch
-          {
-            return View();
-          }
-          
-          return RedirectToAction("CreateRoom");
-        }
-          return View(); 
+            try{
+                location.ClientID = CurrentClient.ClientID;
+                _db.Locations.Add(location);
+                _db.SaveChanges();  
+            }
+            catch
+            {
+              return View();
+            }
+            
+            return RedirectToAction("CreateRoom", location.LocationID);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
