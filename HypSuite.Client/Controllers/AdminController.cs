@@ -21,13 +21,14 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult AdminLogin(Employee admin)
         { 
-          foreach (var u in _db.Admin)
-          {
-            if(u.Username == admin.Username){
-              return RedirectToAction("AdminPortal");
-            }
-          }
-        
+          // foreach (var u in _db.Admin)
+          // {
+          //   if(u.Username == admin.Username){
+          //     return RedirectToAction("AdminPortal");
+          //   }
+          // }
+          return RedirectToAction("AdminPortal");
+
           return View();
         }
 
@@ -58,6 +59,11 @@ namespace HypSuite.Client.Controllers
           return RedirectToAction("ClientPortal");
         }
           return View(); 
+        }
+
+        public IActionResult ViewClients()
+        {
+          return ViewClients();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

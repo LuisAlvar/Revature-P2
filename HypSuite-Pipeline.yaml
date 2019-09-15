@@ -34,10 +34,10 @@ stages:
               version: '2.2.401'
           - script: |
               dotnet tool install --global dotnet-sonarscanner
-              # dotnet sonarscanner begin /k:"devopsdemo2019" /o:"fredbelotte-github" /d:sonar.login="5525c02dac30659cb0710672f763f1be743c7afe" /d:sonar.host.url="https://sonarcloud.io/"
+              dotnet sonarscanner begin /k:"Revature-P2" /o:"dghazvini" /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a" /d:sonar.host.url="https://sonarcloud.io/"
               dotnet build
               dotnet test --logger trx /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=\"cobertura,opencover\" /p:Exclude=[xunit*]*
-              # dotnet sonarscanner end /d:sonar.login="5525c02dac30659cb0710672f763f1be743c7afe"
+              dotnet sonarscanner end /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a"
           - task: PublishTestResults@2
             displayName: 'publish result::unit-test'
             inputs:
@@ -67,9 +67,9 @@ stages:
               containerRegistry: 'docker'
             displayName: 'docker login'
           - script: |
-              # docker image build --file Dockerfile --tag devopsdemo .
-              # docker image tag devopsdemo fredbelotte/devopsdemo
-              # docker push fredbelotte/devopsdemo
+              docker image build --file Dockerfile --tag hypsuite .
+              docker image tag hypsuite dghazvini/hypsuite
+              docker push dghazvini/hypsuite
           - task: Docker@2
             inputs:
               command: 'logout'
