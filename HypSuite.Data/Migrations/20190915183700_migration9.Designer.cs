@@ -4,14 +4,16 @@ using HypSuite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HypSuite.Data.Migrations
 {
     [DbContext(typeof(HypSuiteDBContext))]
-    partial class HypSuiteDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190915183700_migration9")]
+    partial class migration9
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,6 +62,8 @@ namespace HypSuite.Data.Migrations
                         .IsRequired();
 
                     b.Property<string>("Password");
+
+                    b.Property<int>("ReservationID");
 
                     b.Property<string>("Username");
 
@@ -130,7 +134,9 @@ namespace HypSuite.Data.Migrations
                     b.Property<string>("CheckOutDate")
                         .IsRequired();
 
-                    b.Property<int?>("GuestID");
+                    b.Property<int?>("CustomerGuestID");
+
+                    b.Property<int>("GuestID");
 
                     b.Property<int?>("HotelClientClientID");
 
@@ -142,7 +148,7 @@ namespace HypSuite.Data.Migrations
 
                     b.HasKey("ReservationID");
 
-                    b.HasIndex("GuestID");
+                    b.HasIndex("CustomerGuestID");
 
                     b.HasIndex("HotelClientClientID");
 
@@ -203,7 +209,7 @@ namespace HypSuite.Data.Migrations
                 {
                     b.HasOne("HypSuite.Domain.Models.Guest", "Customer")
                         .WithMany()
-                        .HasForeignKey("GuestID");
+                        .HasForeignKey("CustomerGuestID");
 
                     b.HasOne("HypSuite.Domain.Models.HotelClient")
                         .WithMany("ReservationHistory")

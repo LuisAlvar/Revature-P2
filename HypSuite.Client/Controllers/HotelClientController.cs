@@ -55,14 +55,18 @@ namespace HypSuite.Client.Controllers
         public IActionResult ChooseLocation()
         {
           CurrentClient.Locations = new List<Location>();
+          CurrentLocation = new Location();
+          CurrentLocation.LocationList = new List<Location>();
           foreach (var l in _db.Locations)
           {
             if(CurrentClient.ClientID == l.ClientID){
               CurrentClient.Locations.Add(l);
+              CurrentLocation.LocationList.Add(l);
             }           
           }
+          ViewBag.Current = CurrentClient.Locations; 
 
-          return View(CurrentClient);
+          return View(CurrentLocation);
         }
         [HttpPost]
         public IActionResult ChooseLocation(Location l)

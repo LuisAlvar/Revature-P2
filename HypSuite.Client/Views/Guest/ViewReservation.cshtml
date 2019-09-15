@@ -1,4 +1,12 @@
-<h1>Here is the content of your current reservation: </h1>
+@model HypSuite.Domain.Models.Reservation
+<h1>Here is the content of your current reservation: </h1><br>
+<h3>Location: @Model.HotelsLocation </h3><br>
+<h3>Room(s): </h3>
+@foreach(var i in Model.Rooms)
+{
+  <li>@i</li>
+}
+<li></li>
 
 <br><br><br>
 <h3><a href="../Guest/ViewRooms">Add Room</a></h3><br>

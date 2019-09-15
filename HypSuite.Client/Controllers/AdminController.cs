@@ -29,7 +29,7 @@ namespace HypSuite.Client.Controllers
           // }
           return RedirectToAction("AdminPortal");
 
-          return View();
+          //return View();
         }
 
         public IActionResult AdminPortal()

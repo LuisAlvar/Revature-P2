@@ -1,12 +1,12 @@
-@model HypSuite.Domain.Models.HotelClient
+@model HypSuite.Domain.Models.Location
 
 <form action="/HotelClient/ChooseLocation" method="post">
   <div class="form-group">
     <label for="LocationID">Location</label>
-    <select class="form-control" id="LocationID" name="l.LocationID">
-      @foreach(var v in Model.Locations)
+    <select class="form-control" id="LocationID">
+      @foreach(var v in Model.LocationList)
       {
-        <option>@v</option>  
+        <option name ="LocationID">@v</option>  
       }
     </select>
   </div> 

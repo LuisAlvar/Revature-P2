@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HypSuite.Domain.Models
 {
@@ -12,7 +13,10 @@ namespace HypSuite.Domain.Models
         public string LastName { get; set; }
         public string Username {get;set;}
         public string Password { get; set; }
-        public int ReservationID { get; set; }
+        
+        [ForeignKey("ClientID")]
+        [NotMapped]
+        public int ClientID { get; set; }
 
         public override string ToString()
         {

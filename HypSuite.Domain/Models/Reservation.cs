@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HypSuite.Domain.Models
 {
@@ -7,6 +8,7 @@ namespace HypSuite.Domain.Models
     {
         [Key]
         public int ReservationID { get; set; }
+        [ForeignKey("GuestID")]
         public Guest Customer {get;set;}
         public List<Room> Rooms { get; set; }
         [Required]

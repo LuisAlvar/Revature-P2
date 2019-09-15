@@ -17,21 +17,22 @@ namespace HypSuite.Client.Controllers
         
         public IActionResult ChooseRegion()
         {
-          return View();
-        }
-        [HttpPost]
-        public IActionResult ChooseRegion(string location)
-        {
-          return RedirectToAction("ViewLocations", location);
-        }
-        public IActionResult ViewLocations(string location)
-        {
           Current = new Reservation();
           Current.HotelsLocation = new Location();
+          return View(Current.HotelsLocation);
+        }
+        [HttpPost]
+        public IActionResult ChooseRegion(Location location)
+        {
+          Current.HotelsLocation.State = location.State;
+          return RedirectToAction("ViewLocations");
+        }
+        public IActionResult ViewLocations()
+        {
           Current.HotelsLocation.Nearby = new List<Location>();
           foreach (var l in _db.Locations)
           {
-            if(location == l.State){
+            if(Current.HotelsLocation.State == l.State){
               Current.HotelsLocation.Nearby.Add(l);
             }           
           }
@@ -42,7 +43,19 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult ViewLocations(Location lo)
         {
-          Current.HotelsLocation = lo;
+          Current.HotelsLocation.Rooms = new List<Room>();
+          foreach (var l in _db.Locations)
+          {
+            if(l.Street == lo.Street){
+              Current.HotelsLocation.Street = l.Street;
+              Current.HotelsLocation.State = l.State;
+              Current.HotelsLocation.ClientID = l.ClientID;
+              Current.HotelsLocation.LocationID = l.LocationID;
+              Current.HotelsLocation.City = l.City;
+              Current.HotelsLocation.Rooms = l.Rooms;
+              Current.HotelsLocation.ZipCode = l.ZipCode;
+            }           
+          }
           return RedirectToAction("ViewRooms");
         }
 
@@ -69,7 +82,8 @@ namespace HypSuite.Client.Controllers
           {
               if(item.RoomID == r.RoomID)
               {
-                Current.Rooms.Add(r);
+                Current.Rooms.Add(item);
+                item.IsOccupied = true;
               }
           }
           return RedirectToAction("AddMore");
@@ -78,6 +92,11 @@ namespace HypSuite.Client.Controllers
         public IActionResult AddMore()
         {
           return View();
+        }
+
+        public IActionResult ChooseReservationDates()
+        {
+          return View(Current);
         }
 
         public IActionResult ViewReservation()

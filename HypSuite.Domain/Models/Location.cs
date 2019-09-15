@@ -24,6 +24,8 @@ namespace HypSuite.Domain.Models
         [Required]
         [NotMapped]
         public List<Location> Nearby {get;set;}
+        [NotMapped]
+        public List<Location> LocationList {get;set;}
 
         public override string ToString()
         {

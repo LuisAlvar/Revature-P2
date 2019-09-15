@@ -5,7 +5,8 @@
 <form action="/Guest/ViewLocations" method ="post">
     <label id="Location">Nearby Locations:</label><br>
     @foreach (var v in Model.Nearby){
-      @Html.RadioButton("Location", @v)
+      @v.Street 
+      @Html.RadioButton("Street", @v.Street)<br>
     }
   <button type="submit">Next</button>
 </form>

@@ -6,7 +6,8 @@
   <label id="RoomID">Available Rooms:</label><br>
   @foreach (var item in Model.Available)
   {
-      @Html.RadioButton("RoomID", @item)
+      @item
+      @Html.RadioButton("RoomID", @item.RoomID)<br>
   }
 <button type="submit">Next</button>
 </form>
