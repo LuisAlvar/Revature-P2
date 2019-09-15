@@ -1,0 +1,14 @@
+@model HypSuite.Domain.Models.HotelClient
+
+<form action="/HotelClient/ChooseLocation" method="post">
+  <div class="form-group">
+    <label for="LocationID">Location</label>
+    <select class="form-control" id="LocationID" name="l.LocationID">
+      @foreach(var v in Model.Locations)
+      {
+        <option>@v</option>  
+      }
+    </select>
+  </div> 
+  <button type="submit" class="btn btn-primary">Select Location</button>
+</form>

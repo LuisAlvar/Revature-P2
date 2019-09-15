@@ -13,6 +13,7 @@ namespace HypSuite.Client.Controllers
     public class HotelClientController : Controller
     {
       public static HotelClient CurrentClient {get;set;}
+      public static Location CurrentLocation {get;set;}
       private HypSuiteDBContext _db = new HypSuiteDBContext();
         public IActionResult Index()
         {
@@ -51,6 +52,25 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        public IActionResult ChooseLocation()
+        {
+          CurrentClient.Locations = new List<Location>();
+          foreach (var l in _db.Locations)
+          {
+            if(CurrentClient.ClientID == l.ClientID){
+              CurrentClient.Locations.Add(l);
+            }           
+          }
+
+          return View(CurrentClient);
+        }
+        [HttpPost]
+        public IActionResult ChooseLocation(Location l)
+        {
+          CurrentLocation.LocationID = l.LocationID;
+          return RedirectToAction("CreateRoom");
+        }
+        
         public IActionResult CreateRoom()
         {
           return View();
@@ -62,7 +82,7 @@ namespace HypSuite.Client.Controllers
           if(ModelState.IsValid)
           {
             try{
-                //room.LocationID = CurrentClient.;
+                room.LocationID = CurrentLocation.LocationID;
                 _db.Rooms.Add(room);
                 _db.SaveChanges();  
             }
@@ -97,6 +117,8 @@ namespace HypSuite.Client.Controllers
         {
             try{
                 location.ClientID = CurrentClient.ClientID;
+                CurrentLocation = new Location();
+                CurrentLocation = location;
                 _db.Locations.Add(location);
                 _db.SaveChanges();  
             }
@@ -105,7 +127,7 @@ namespace HypSuite.Client.Controllers
               return View();
             }
             
-            return RedirectToAction("CreateRoom", location.LocationID);
+            return RedirectToAction("CreateRoom");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
