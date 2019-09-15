@@ -15,11 +15,11 @@ namespace HypSuite.Domain.Models
         [Required]
         public string ZipCode { get; set; }
         
+        [Key]
         public int LocationID { get; set; }
         
         [ForeignKey("ClientID")]
         public int ClientID { get; set; }
-
         public List<Room> Rooms { get; set; }
         [Required]
         [NotMapped]

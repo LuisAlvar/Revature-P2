@@ -6,6 +6,7 @@ namespace HypSuite.Domain.Models
 {
     public class HotelClient
     {
+        [Key]
         public int ClientID { get; set; }
         [Required]
         public string Name{get;set;}
