@@ -34,7 +34,7 @@ stages:
               version: '2.2.401'
           - script: |
               dotnet tool install --global dotnet-sonarscanner
-              dotnet sonarscanner begin /k:"Revature-P2" /o:"dghazvini" /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a" /d:sonar.host.url="https://sonarcloud.io/"
+              dotnet sonarscanner begin /k:"dghazvini_Revature-P2" /o:"dghazvini" /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a" /d:sonar.host.url="https://sonarcloud.io/"
               dotnet build
               dotnet test --logger trx /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=\"cobertura,opencover\" /p:Exclude=[xunit*]*
               dotnet sonarscanner end /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a"
@@ -88,12 +88,12 @@ stages:
         displayName: 'deploy-process'
         pool:
           vmImage: 'ubuntu-16.04'
-       # steps:
-          # - task: AzureWebAppContainer@1
-          #   inputs:
-          #     azureSubscription: 'revature(xyz)(eb8964dc-9fbc-4999-8360-6d5e23316e15)'
-          #     appName: 'devopsdemo201909'
-          #     containers: 'fredbelotte/devopsdemo'
+        steps:
+          - task: AzureWebAppContainer@1
+            inputs:
+              azureSubscription: 'Azure subscription 1(0af1c692-8526-4505-808a-01504f95a460)'
+              appName: 'HypSuite'
+              containers: 'dghazvini/hypsuite'
 
 trigger:
   branches:
