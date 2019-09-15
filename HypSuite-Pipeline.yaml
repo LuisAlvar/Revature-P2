@@ -34,7 +34,7 @@ stages:
               version: '2.2.401'
           - script: |
               dotnet tool install --global dotnet-sonarscanner
-              dotnet sonarscanner begin /k:"Revature-P2" /o:"dghazvini" /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a" /d:sonar.host.url="https://sonarcloud.io/"
+              dotnet sonarscanner begin /k:"dghazvini_Revature-P2" /o:"dghazvini" /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a" /d:sonar.host.url="https://sonarcloud.io/"
               dotnet build
               dotnet test --logger trx /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=\"cobertura,opencover\" /p:Exclude=[xunit*]*
               dotnet sonarscanner end /d:sonar.login="0ca69edfb08cb3cbfcd505ec70da63ae136d549a"
