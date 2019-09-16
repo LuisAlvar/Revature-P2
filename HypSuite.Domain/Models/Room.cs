@@ -21,7 +21,7 @@ namespace HypSuite.Domain.Models
         public decimal DailyRate{get;set;}
         [ForeignKey("ReservationID")]
         [NotMapped]
-        public int ReservationID{get;set;}
+        public int? ReservationID{get;set;}
         public bool IsOccupied {get;set;}
         [NotMapped]
         public List<Room> Available {get;set;}

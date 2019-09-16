@@ -87,15 +87,16 @@ namespace HypSuite.Client.Controllers
           {
             try{
                 room.LocationID = CurrentLocation.LocationID;
+                room.ReservationID = null;
                 _db.Rooms.Add(room);
                 _db.SaveChanges();  
+                return RedirectToAction("ClientPortal");
             }
             catch
             {
               return View();
             }
           
-            return RedirectToAction("ClientPortal");
           }
           return View(); 
           
