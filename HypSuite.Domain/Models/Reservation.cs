@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,10 +24,20 @@ namespace HypSuite.Domain.Models
         public decimal CalculateReservationCost()
         {
           Total = 0M;
-          foreach(var r in Rooms)
+          string start = CheckInDate.Substring(8, 2);
+          string end = CheckOutDate.Substring(8,2);
+          int x = Int32.Parse(start);
+          int y = Int32.Parse(end);
+          int count = y-x;
+          if(count >0)
           {
-            Total += r.DailyRate;
+            foreach(var r in Rooms)
+            {
+              Total += r.DailyRate;
+            }
+            return Total * count;
           }
+          
           return Total;
         }
 
