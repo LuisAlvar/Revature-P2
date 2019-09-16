@@ -56,7 +56,7 @@ namespace HypSuite.Client.Controllers
               Current.HotelsLocation.ZipCode = l.ZipCode;
             }           
           }
-          return RedirectToAction("ViewRooms");
+          return RedirectToAction("ReservationDates");
         }
 
         public IActionResult ViewRooms()
@@ -94,9 +94,16 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
-        public IActionResult ChooseReservationDates()
+        public IActionResult ReservationDates()
         {
           return View(Current);
+        }
+        [HttpPost]
+        public IActionResult ReservationDates(Reservation res)
+        {
+          Current.CheckInDate = res.CheckInDate;
+          Current.CheckOutDate = res.CheckOutDate;
+          return RedirectToAction("ViewRooms");
         }
 
         public IActionResult ViewReservation()

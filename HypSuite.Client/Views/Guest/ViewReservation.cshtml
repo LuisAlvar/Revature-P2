@@ -1,6 +1,10 @@
 @model HypSuite.Domain.Models.Reservation
 <h1>Here is the content of your current reservation: </h1><br>
 <h3>Location: @Model.HotelsLocation </h3><br>
+<h3>Check-In Date: @Model.CheckInDate </h3><br>
+<h3>Check-Out Date: @Model.CheckOutDate </h3><br>
+
+
 <h3>Room(s): </h3>
 @foreach(var i in Model.Rooms)
 {
