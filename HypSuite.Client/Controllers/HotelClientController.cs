@@ -99,11 +99,6 @@ namespace HypSuite.Client.Controllers
           
           }
           return View(); 
-          
-          // DB Logic
-          // System.Console.WriteLine("\n\n\n" + room.RoomID);
-          // System.Console.WriteLine(room.MaxCapacity);
-          // System.Console.WriteLine(room.IsSmoking + "\n\n\n");
         }
 
         public IActionResult UpdateRooms()
