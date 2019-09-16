@@ -2,12 +2,16 @@
 
 <form action="/HotelClient/ChooseLocation" method="post">
   <div class="form-group">
-    <label id="LocationID">Location</label><br>
+    <h1><label id="LocationID">Locations</label></h1><br>
       @foreach (var item in Model.LocationList)
       {
           @item
-          @Html.RadioButton("LocationID", @item.LocationID)<br>
+          @Html.RadioButton("LocationID", @item.LocationID, true)<br>
       }
   </div> 
   <button type="submit" class="btn btn-primary">Select Location</button>
+</form>
+<br>
+<form action="/HotelClient/ClientPortal">
+  <button type="submit" class="btn btn-primary">Cancel</button>
 </form>

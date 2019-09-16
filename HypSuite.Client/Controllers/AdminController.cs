@@ -43,12 +43,12 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegisterClient(HotelClient test)
+        public IActionResult RegisterClient(HotelClient hotelClient)
         {
           if(ModelState.IsValid)
         {
           try{
-              _db.Clients.Add(test);
+              _db.Clients.Add(hotelClient);
               _db.SaveChanges();  
           }
           catch
@@ -56,14 +56,19 @@ namespace HypSuite.Client.Controllers
             return View();
           }
           
-          return RedirectToAction("ClientPortal");
+          return RedirectToAction("AdminPortal");
         }
           return View(); 
         }
 
         public IActionResult ViewClients()
         {
-          return ViewClients();
+          List<HotelClient> hotelClientList = new List<HotelClient>();
+          foreach (var client in _db.Clients)
+          {
+            hotelClientList.Add(client);
+          }
+          return View(hotelClientList);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

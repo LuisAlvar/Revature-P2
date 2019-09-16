@@ -132,7 +132,7 @@ namespace HypSuite.Client.Controllers
               return View();
             }
             
-            return RedirectToAction("CreateRoom");
+            return RedirectToAction("ClientPortal");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

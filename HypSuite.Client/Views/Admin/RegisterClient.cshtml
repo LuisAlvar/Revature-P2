@@ -1,17 +1,21 @@
 @model HypSuite.Domain.Models.HotelClient
 <form action="/Admin/RegisterClient" method="post">
   <div class="form-group">
-    <label for="formGroupExampleInput">Business Name</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" name="Name">
+    <label for="Name">Business Name</label>
+    <input type="text" class="form-control" id="Name" name="Name" required>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">Phone Number<br>(Format: 555-555-5555)</label>
-    <input type="tel" class="form-control" id="formGroupExampleInput2" maxlength="12" name ="PhoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+    <label for="PhoneNumber">Phone Number<br>(Format: 555-555-5555)</label>
+    <input type="tel" class="form-control" id="PhoneNumber" maxlength="12" name ="PhoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput">Email Address</label>
-    <input type="email" class="form-control" id="formGroupExampleInput" name = "Email">
+    <label for="Email">Email Address</label>
+    <input type="email" class="form-control" id="Email" name = "Email" required>
   </div>
 
   <button type="submit" class="btn btn-primary">Register Client</button>
+</form>
+<br>
+<form action="/Admin/AdminPortal">
+  <button type="submit" class="btn btn-primary">Cancel</button>
 </form>

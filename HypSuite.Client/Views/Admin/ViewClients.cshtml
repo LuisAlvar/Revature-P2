@@ -1,0 +1,17 @@
+@model List<HypSuite.Domain.Models.HotelClient>
+
+<div class="form-group">
+  <h1><label id="LocationID">Clients</label></h1><br>
+    @foreach (var item in Model)
+    {
+        @item.Name
+        <br>
+        @item.PhoneNumber
+        <br>
+        @item.Email
+        <br><br>
+    }
+</div> 
+<form action="/Admin/AdminPortal">
+  <button type="submit" class="btn btn-primary">Cancel</button>
+</form>
