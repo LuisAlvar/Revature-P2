@@ -117,6 +117,8 @@ namespace HypSuite.Client.Controllers
 
         public IActionResult ConfirmReservation()
         {
+          _db.Reservations.Add(Current);
+          _db.SaveChanges();
           return View(Current);
         }
 

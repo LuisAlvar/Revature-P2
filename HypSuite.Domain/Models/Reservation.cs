@@ -47,7 +47,15 @@ namespace HypSuite.Domain.Models
           {
             if(CheckInDate[5] == CheckOutDate[5] && CheckInDate[6] == CheckOutDate[6])
             {
-                return true; 
+                string start = CheckInDate.Substring(8, 2);
+                string end = CheckOutDate.Substring(8,2);
+                int x = Int32.Parse(start);
+                int y = Int32.Parse(end);
+                int count = y-x;
+                if(count > 0)
+                {
+                  return true; 
+                }
             }
           }
           return false;

@@ -1,20 +1,40 @@
 @model HypSuite.Domain.Models.Reservation
-<h1>Here is the content of your current reservation: </h1><br>
+@{
+    ViewData["Title"] = "Review Reservation";
+}
+<h1>Here is the content of your current reservation: </h1><br><br>
 <h3>Location: @Model.HotelsLocation </h3><br>
 <h3>Check-In Date: @Model.CheckInDate </h3><br>
 <h3>Check-Out Date: @Model.CheckOutDate </h3><br>
 
 
+
 <h3>Room(s): </h3>
 @foreach(var i in Model.Rooms)
 {
-  <li>@i</li>
+  <li>@i,              Daily Rate: @i.DailyRate </li>
 }
-
+<br><br>
 <h3>Total Cost: @Model.CalculateReservationCost()</h3>
 
 <br><br><br>
-<h3><a href="../Guest/ViewRooms">Add Room</a></h3><br>
+
+<form action="/Guest/ViewRooms">
+  <button type="submit" class="btn btn-primary">Add Room</button>
+</form>
+<br>
+<form action="/Guest/RemoveRoom">
+  <button type="submit" class="btn btn-primary">Remove Room</button>
+</form>
+<br>
+<form action="/Guest/ConfirmReservation">
+  <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+</form>
+<br>
+
+
+
+<!-- <h3><a href="../Guest/ViewRooms">Add Room</a></h3><br>
 <h3><a href="../Guest/RemoveRoom">Remove Room</a></h3><br>
-<h3><a href="../Guest/ConfirmReservation">Confirm Reservation</a></h3><br>
+<h3><a href="../Guest/ConfirmReservation">Confirm Reservation</a></h3><br> -->
 
