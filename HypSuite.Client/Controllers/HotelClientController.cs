@@ -44,7 +44,7 @@ namespace HypSuite.Client.Controllers
 
         public IActionResult ClientPortal()
         {
-          return View();
+          return View(CurrentClient);
         }
 
         public IActionResult ClientInfo()

@@ -1,7 +1,10 @@
+@model HypSuite.Domain.Models.HotelClient
+
 @{
     ViewData["Title"] = "ClientPortal";
 }
 
+<p>Welcome, @Model.Name</p><br>
 <form action="/HotelClient/ChooseLocation">
   <button type="submit" class="btn btn-primary">Create Room</button>
 </form>
