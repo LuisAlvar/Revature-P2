@@ -6,7 +6,7 @@
       @foreach (var item in Model.LocationList)
       {
           @item
-          @Html.RadioButton("LocationID", @item.LocationID)<br>
+          @Html.RadioButton("LocationID", @item.LocationID, true)<br>
       }
   </div> 
   <button type="submit" class="btn btn-primary">Select Location</button>

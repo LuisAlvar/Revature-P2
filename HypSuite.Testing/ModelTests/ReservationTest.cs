@@ -22,6 +22,35 @@ namespace HypSuite.Testing.ModelTests
         Assert.NotNull(actual);
         Assert.IsType<decimal>(actual);
       }
+
+      [Fact]
+      public void TestCalculate()
+      {
+      //Given
+        var sut = new Reservation();
+        sut.CheckInDate="2019-09-17";
+        sut.CheckOutDate="2019-09-19";
+        sut.Rooms = new List<Room>(){new Room{DailyRate=50M}, new Room{DailyRate=60M}, new Room{DailyRate=70M}};
+      //When
+        var actual = sut.CalculateReservationCost();
+      //Then
+        var expected = 360M;
+        Assert.True(expected==actual);
+      }
+
+      [Fact]
+      public void TestCheckDates()
+      {
+      //Given
+        var sut = new Reservation();
+        sut.CheckInDate="2019-09-20";
+        sut.CheckOutDate="2019-09-19";
+      //When
+        var actual = sut.CheckDates();
+      //Then
+        var expected = false;
+        Assert.True(expected==actual);
+      }
         
     }
 }
