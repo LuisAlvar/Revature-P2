@@ -61,6 +61,25 @@ namespace HypSuite.Domain.Models
           return false;
         }
 
+        public void CheckPartySize()
+        {
+          if(Customer.PartySize<=2)
+          {
+            
+          }
+        }
+
+        public void ConfirmRooms()
+        {
+          foreach (var item in Rooms)
+          {
+            if(item.IsOccupied == false)
+            {
+              item.IsOccupied = true;
+            }
+          }
+        }
+
         public override string ToString()
         {
           return $"Reservation ID: {ReservationID} \n\nReservation has been confirmed for: {Customer.LastName},{Customer.FirstName} \n\nReservation Location: {HotelsLocation} \n\tCheck In Date: {CheckInDate} Check Out Date: {CheckOutDate}";

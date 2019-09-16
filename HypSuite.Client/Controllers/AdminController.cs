@@ -39,6 +39,7 @@ namespace HypSuite.Client.Controllers
 
         public IActionResult RegisterClient()
         {
+          HotelClient h = new HotelClient();
           return View();
         }
 

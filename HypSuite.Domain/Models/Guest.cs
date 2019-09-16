@@ -11,6 +11,8 @@ namespace HypSuite.Domain.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+        [Required]
+        public int PartySize {get;set;}
         
         [ForeignKey("ClientID")]
         [NotMapped]

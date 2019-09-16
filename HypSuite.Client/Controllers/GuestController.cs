@@ -14,6 +14,7 @@ namespace HypSuite.Client.Controllers
     {
         private HypSuiteDBContext _db = new HypSuiteDBContext();
         public static Reservation Current {get;set;}
+        public static Guest CurrentGuest {get;set;}
         
         public IActionResult ChooseRegion()
         {
@@ -56,7 +57,7 @@ namespace HypSuite.Client.Controllers
               Current.HotelsLocation.ZipCode = l.ZipCode;
             }           
           }
-          return RedirectToAction("ReservationDates");
+          return RedirectToAction("GuestInformation");
         }
 
         public IActionResult ViewRooms()
@@ -94,6 +95,23 @@ namespace HypSuite.Client.Controllers
           return View();
         }
 
+        public IActionResult GuestInformation()
+        {
+          CurrentGuest = new Guest();
+          return View(CurrentGuest);
+        }
+        [HttpPost]
+        public IActionResult GuestInformation(Guest g)
+        {
+          CurrentGuest = g;
+          CurrentGuest.ClientID = Current.HotelsLocation.ClientID;
+          Current.Customer = new Guest();
+          Current.Customer.FirstName = CurrentGuest.FirstName;
+          Current.Customer.LastName = CurrentGuest.LastName;
+          Current.NumberOfGuests = CurrentGuest.PartySize;
+          return RedirectToAction("ReservationDates");
+        }
+        
         public IActionResult ReservationDates()
         {
           return View(Current);
@@ -112,11 +130,23 @@ namespace HypSuite.Client.Controllers
 
         public IActionResult ViewReservation()
         {
+          Current.ConfirmRooms();
           return View(Current);
         }
 
         public IActionResult ConfirmReservation()
         {
+          _db.Guests.Add(CurrentGuest);
+          _db.SaveChanges();
+          foreach (var item in _db.Guests)
+          {
+              if(item.FirstName == CurrentGuest.FirstName && item.LastName == CurrentGuest.LastName)
+              {
+                CurrentGuest.GuestID = item.GuestID;
+              }
+          }          
+          Current.Customer.GuestID = CurrentGuest.GuestID;
+          Current.Total = Current.CalculateReservationCost();
           _db.Reservations.Add(Current);
           _db.SaveChanges();
           return View(Current);

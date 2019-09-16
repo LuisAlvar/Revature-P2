@@ -1,0 +1,26 @@
+@model HypSuite.Domain.Models.Guest
+
+<form action="/Guest/GuestInformation" method="post">
+  <div class="form-group">
+    <label for="FirstName">First Name:</label>
+    <input type="text" class="form-control" id="FirstName" name="FirstName" maxlength="15">
+  </div>
+
+  <div class="form-group">
+    <label for="LastName">Last Name:</label>
+    <input type="text" class="form-control" id="LastName" name="LastName" maxlength="15">
+  </div>
+
+  <div class="form-group">
+    <label for="PartySize">Party Size</label>
+    <select class="form-control" id="Party Size" name="PartySize">
+      <option>1</option> 
+      <option>2</option>
+      <option>3</option> 
+      <option>4</option>  
+    </select>
+  </div> 
+
+<br><br>
+  <button type="submit" class="btn btn-primary">Next</button>
+</form>
