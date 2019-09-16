@@ -1,3 +1,4 @@
+@model HypSuite.Domain.Models.Employee
 @section AddToHead{
   <link href="@Url.Content("~/css/AdminLogin.css")" rel="stylesheet" type="text/css" />
 }
@@ -16,8 +17,8 @@
     
       <!-- Login Form -->
       <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="text" id="Username" class="fadeIn second" name="Username" placeholder="login">
+        <input type="password" id="Password" class="fadeIn third" name="Password" placeholder="password">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
 

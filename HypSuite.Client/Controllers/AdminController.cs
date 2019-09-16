@@ -21,15 +21,14 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult AdminLogin(Employee admin)
         { 
-          // foreach (var u in _db.Admin)
-          // {
-          //   if(u.Username == admin.Username){
-          //     return RedirectToAction("AdminPortal");
-          //   }
-          // }
-          return RedirectToAction("AdminPortal");
-
-          //return View();
+          foreach (var u in _db.Admin)
+          {
+            if(u.Username == admin.Username) {
+              if(u.Password == admin.Password)
+                return RedirectToAction("AdminPortal");
+            }
+          }
+          return View();
         }
 
         public IActionResult AdminPortal()
