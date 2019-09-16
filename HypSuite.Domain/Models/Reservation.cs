@@ -65,7 +65,7 @@ namespace HypSuite.Domain.Models
         {
           if(Customer.PartySize<=2)
           {
-            
+            //
           }
         }
 
