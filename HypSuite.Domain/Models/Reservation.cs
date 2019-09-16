@@ -30,6 +30,18 @@ namespace HypSuite.Domain.Models
           return Total;
         }
 
+        public bool CheckDates()
+        {
+          if(CheckInDate[3] == CheckOutDate[3] && CheckInDate[2] == CheckOutDate[2])
+          {
+            if(CheckInDate[5] == CheckOutDate[5] && CheckInDate[6] == CheckOutDate[6])
+            {
+                return true; 
+            }
+          }
+          return false;
+        }
+
         public override string ToString()
         {
           return $"Reservation ID: {ReservationID} \n\nReservation has been confirmed for: {Customer.LastName},{Customer.FirstName} \n\nReservation Location: {HotelsLocation} \n\tCheck In Date: {CheckInDate} Check Out Date: {CheckOutDate}";

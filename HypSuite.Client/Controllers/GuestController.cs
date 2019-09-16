@@ -101,9 +101,13 @@ namespace HypSuite.Client.Controllers
         [HttpPost]
         public IActionResult ReservationDates(Reservation res)
         {
-          Current.CheckInDate = res.CheckInDate;
-          Current.CheckOutDate = res.CheckOutDate;
-          return RedirectToAction("ViewRooms");
+          if(res.CheckDates())
+          {
+            Current.CheckInDate = res.CheckInDate;
+            Current.CheckOutDate = res.CheckOutDate;
+            return RedirectToAction("ViewRooms");
+          }
+          return View();
         }
 
         public IActionResult ViewReservation()
