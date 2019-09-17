@@ -170,10 +170,12 @@ namespace HypSuite.Client.Controllers
                 CurrentGuest.GuestID = item.GuestID;
               }
           }          
+          CurrentGuest.ClientID = Current.HotelsLocation.ClientID;
           Current.Customer.GuestID = CurrentGuest.GuestID;
           Current.Total = Current.CalculateReservationCost();
           _db.Reservations.Add(Current);
-          _db.SaveChanges();
+          Current.ReservationID = 1;
+          //_db.SaveChanges();
           return View(Current);
         }
 
@@ -183,7 +185,6 @@ namespace HypSuite.Client.Controllers
           {
             return RedirectToAction("ViewRooms");
           }
-          //else if(Current.Rooms.ElementAt(0) != null && Current.Rooms.Exists(r=>r.RoomID >0))
           else if (Current.Rooms.Count == 1)
           {
             Current.Rooms.RemoveAt(0);
@@ -196,6 +197,7 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpDelete]
+
         public IActionResult RemoveRoom(Reservation r)
         {
           int i = 0;
