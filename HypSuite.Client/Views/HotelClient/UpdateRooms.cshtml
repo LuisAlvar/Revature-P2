@@ -1,1 +1,18 @@
-<p>Room Data here</p>
+@model HypSuite.Domain.Models.Location
+
+<form action="/HotelClient/UpdateRooms" method="post">
+  <div class="form-group">
+    <h1><label id="LocationID">View Rooms</label></h1>
+    <p>Choose a location to view rooms in.</p><br>
+      @foreach (var item in Model.LocationList)
+      {
+          @item
+          @Html.RadioButton("LocationID", @item.LocationID, true)<br>
+      }
+  </div> 
+  <button type="submit" class="btn btn-primary">Select Location</button>
+</form>
+<br>
+<form action="/HotelClient/ClientPortal">
+  <button type="submit" class="btn btn-primary">Cancel</button>
+</form>

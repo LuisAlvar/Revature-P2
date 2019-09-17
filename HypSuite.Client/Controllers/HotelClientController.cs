@@ -103,7 +103,36 @@ namespace HypSuite.Client.Controllers
 
         public IActionResult UpdateRooms()
         {
-          return View();
+          CurrentClient.Locations = new List<Location>();
+          CurrentLocation = new Location();
+          CurrentLocation.LocationList = new List<Location>();
+          foreach (var l in _db.Locations)
+          {
+            if(CurrentClient.ClientID == l.ClientID){
+              CurrentClient.Locations.Add(l);
+              CurrentLocation.LocationList.Add(l);
+            }           
+          }
+          ViewBag.Current = CurrentClient.Locations; 
+
+          return View(CurrentLocation);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateRooms(Location l)
+        {
+          CurrentLocation.LocationID = l.LocationID;
+          return RedirectToAction("UpdateRooms2");
+        }
+
+        public IActionResult UpdateRooms2()
+        {
+          List<Room> RoomList = new List<Room>();
+          foreach (var room in _db.Rooms)
+          {
+            RoomList.Add(room);
+          }
+          return View(RoomList);
         }
 
         public IActionResult CreateLocation()

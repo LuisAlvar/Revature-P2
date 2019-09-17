@@ -30,7 +30,7 @@ namespace HypSuite.Domain.Models
 
         public override string ToString()
         {
-          return $"Room #{RoomID} has {SizeSqFt} square feet worth of space. \n It also has {NumberOfBeds} beds, {NumberOfBathrooms} bathrooms";
+          return $"Room #{RoomID} (${DailyRate}) has {SizeSqFt} square feet worth of space. \n It also has {NumberOfBeds} beds, {NumberOfBathrooms} bathroom(s), and has a max capacity of {MaxCapacity} people.";
         } 
     }
 }
