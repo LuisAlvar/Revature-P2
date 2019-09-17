@@ -61,13 +61,6 @@ namespace HypSuite.Domain.Models
           return false;
         }
 
-        public void CheckPartySize()
-        {
-          if(Customer.PartySize<=2)
-          {
-            //
-          }
-        }
 
         public void ConfirmRooms()
         {

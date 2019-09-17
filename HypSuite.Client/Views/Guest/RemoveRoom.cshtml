@@ -1,4 +1,7 @@
 @model HypSuite.Domain.Models.Reservation
+@{
+  int i = 0;
+}
 
 <h1>Which room would you like to remove?</h1>
 <br><br><br>
@@ -7,7 +10,9 @@
 <form action="/Guest/RemoveRooms" method="delete">
   @foreach (var item in Model.Rooms)
   {
-      @Html.RadioButton("RoomID", @item);
+      @item
+      @Html.RadioButton("RoomID", @item.RoomID,true);
+      <br>
   }
   <button type="submit">Select Room</button>
 

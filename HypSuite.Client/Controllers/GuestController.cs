@@ -70,7 +70,26 @@ namespace HypSuite.Client.Controllers
             {
               if(v.IsOccupied == false)
               {
-                r.Available.Add(v);
+                if(CurrentGuest.PartySize ==2)
+                {
+                  if(v.MaxCapacity<=2)
+                  {
+                    r.Available.Add(v);
+                  }
+                }
+
+                else if(CurrentGuest.PartySize ==1)
+                {
+                  if(v.NumberOfBeds<2)
+                  {
+                    r.Available.Add(v);
+                  }
+                } 
+
+                else
+                {
+                  r.Available.Add(v);
+                }
               }
             }
           }
@@ -87,7 +106,13 @@ namespace HypSuite.Client.Controllers
                 item.IsOccupied = true;
               }
           }
-          return RedirectToAction("AddMore");
+          if(CurrentGuest.PartySize >1){
+            return RedirectToAction("AddMore");
+          }
+          else
+          {
+            return RedirectToAction("ViewReservation");
+          }
         }
 
         public IActionResult AddMore()
@@ -158,7 +183,8 @@ namespace HypSuite.Client.Controllers
           {
             return RedirectToAction("ViewRooms");
           }
-          else if(Current.Rooms.FindLastIndex(r => r != null) == 0)
+          //else if(Current.Rooms.ElementAt(0) != null && Current.Rooms.Exists(r=>r.RoomID >0))
+          else if (Current.Rooms.Count == 1)
           {
             Current.Rooms.RemoveAt(0);
             return RedirectToAction("ViewRooms");
@@ -170,9 +196,43 @@ namespace HypSuite.Client.Controllers
         }
 
         [HttpDelete]
-        public IActionResult RemoveRoom(int RoomID)
+        public IActionResult RemoveRoom(Reservation r)
+        {
+          int i = 0;
+          foreach (var item in Current.Rooms)
+          {
+            if(r.Rooms[i].RoomID == item.RoomID)
+            {
+              Current.Rooms.RemoveAt(item.RoomID);
+            }
+            i++;
+          }
+          return RedirectToAction("ViewReservation");
+        }
+
+        public IActionResult LookUpReservation()
         {
           return View();
+        }
+        [HttpPost]
+        public IActionResult LookUpReservation(Reservation reservation)
+        {
+          Current = new Reservation();
+          foreach (var item in _db.Reservations)
+          {
+            if (item.ReservationID == reservation.ReservationID)
+            {
+              Current.Rooms = item.Rooms;
+              Current.ReservationID = item.ReservationID;
+              Current.NumberOfGuests = item.NumberOfGuests;
+              Current.HotelsLocation = item.HotelsLocation;
+              Current.Total = item.Total;
+              Current.CheckOutDate = item.CheckOutDate;
+              Current.CheckInDate = item.CheckInDate;
+              Current.Customer = item.Customer;
+            }
+          }
+          return RedirectToAction("ViewReservation");
         }
         
         

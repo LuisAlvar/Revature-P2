@@ -7,7 +7,7 @@
   @foreach (var item in Model.Available)
   {
       @item
-      @Html.RadioButton("RoomID", @item.RoomID)<br>
+      @Html.RadioButton("RoomID", @item.RoomID, true)<br>
   }
 <button type="submit">Next</button>
 </form>
