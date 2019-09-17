@@ -1,11 +1,13 @@
 @model HypSuite.Domain.Models.Location
 
 <h1>Select the region you want to stay in: </h1>
+<br><br><br>
+<br><br><br>
 
 <form action="/Guest/ChooseRegion" method ="post">
   <fieldset name="select">
     <label></label>
-    <select name= "State" width ="500px">
+    <select name= "State" style="width: 500px;">
       <option label = "Texas" value="Texas">Texas</option>
       <option label = "Arkansas" value="Arlington">Arlington</option>
       <option label = "Oklahoma" value="Oklahoma">Oklahoma</option>
@@ -13,6 +15,6 @@
       <option label = "California" value="California">California</option>
     </select>
   </fieldset>
-
+  <br>
   <button type="submit">Select Location</button>
 </form>
