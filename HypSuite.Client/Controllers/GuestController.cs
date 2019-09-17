@@ -13,6 +13,7 @@ namespace HypSuite.Client.Controllers
     public class GuestController : Controller
     {
         private HypSuiteDBContext _db = new HypSuiteDBContext();
+        private static int i = 1;
         public static Reservation Current {get;set;}
         public static Guest CurrentGuest {get;set;}
         
@@ -174,7 +175,8 @@ namespace HypSuite.Client.Controllers
           Current.Customer.GuestID = CurrentGuest.GuestID;
           Current.Total = Current.CalculateReservationCost();
           _db.Reservations.Add(Current);
-          Current.ReservationID = 1;
+          Current.ReservationID = i;
+          i++;
           //_db.SaveChanges();
           return View(Current);
         }

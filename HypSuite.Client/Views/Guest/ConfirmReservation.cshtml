@@ -12,7 +12,9 @@
 <h3>Reservation #: @Model.ReservationID</h3><br>
 <h3>CheckInDate: @Model.CheckInDate</h3><br>
 <h3>CheckOutDate: @Model.CheckOutDate</h3><br>
+<h3>Guest Name: @Model.Customer.LastName, @Model.Customer.FirstName<h3>
 </div>
+<br><br><br>
 
 <form action="/Home/Index">
   <button type="submit" class="btn btn-primary">Home</button>
