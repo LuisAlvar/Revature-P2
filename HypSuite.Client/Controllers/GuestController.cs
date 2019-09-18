@@ -51,7 +51,7 @@ namespace HypSuite.Client.Controllers
             if(l.Street == lo.Street){
               Current.HotelsLocation.Street = l.Street;
               Current.HotelsLocation.State = l.State;
-              Current.HotelsLocation.ClientID = l.ClientID;
+              Current.HotelsLocation.ClientLocationsID = l.ClientLocationsID;
               Current.HotelsLocation.LocationID = l.LocationID;
               Current.HotelsLocation.City = l.City;
               Current.HotelsLocation.Rooms = l.Rooms;
@@ -67,7 +67,7 @@ namespace HypSuite.Client.Controllers
           r.Available = new List<Room>();
           foreach(var v in _db.Rooms)
           {
-            if(v.LocationID == Current.HotelsLocation.LocationID)
+            if(v.LocationRefID == Current.HotelsLocation.LocationID)
             {
               if(v.IsOccupied == false)
               {
@@ -130,7 +130,7 @@ namespace HypSuite.Client.Controllers
         public IActionResult GuestInformation(Guest g)
         {
           CurrentGuest = g;
-          CurrentGuest.ClientID = Current.HotelsLocation.ClientID;
+          CurrentGuest.ClientGuestsID = Current.HotelsLocation.ClientLocationsID;
           Current.Customer = new Guest();
           Current.Customer.FirstName = CurrentGuest.FirstName;
           Current.Customer.LastName = CurrentGuest.LastName;
@@ -171,7 +171,7 @@ namespace HypSuite.Client.Controllers
                 CurrentGuest.GuestID = item.GuestID;
               }
           }          
-          CurrentGuest.ClientID = Current.HotelsLocation.ClientID;
+          CurrentGuest.ClientGuestsID = Current.HotelsLocation.ClientLocationsID;
           Current.Customer.GuestID = CurrentGuest.GuestID;
           Current.Total = Current.CalculateReservationCost();
           _db.Reservations.Add(Current);
@@ -226,6 +226,9 @@ namespace HypSuite.Client.Controllers
           {
             if (item.ReservationID == reservation.ReservationID)
             {
+              Current = new Reservation();
+              Current.HotelsLocation = new Location();
+              Current.Rooms = new List<Room>();
               Current.Rooms = item.Rooms;
               Current.ReservationID = item.ReservationID;
               Current.NumberOfGuests = item.NumberOfGuests;
@@ -233,9 +236,20 @@ namespace HypSuite.Client.Controllers
               Current.Total = item.Total;
               Current.CheckOutDate = item.CheckOutDate;
               Current.CheckInDate = item.CheckInDate;
+              Current.Customer = new Guest();
               Current.Customer = item.Customer;
+              // Current.Customer.GuestID = item.Customer.GuestID;
             }
           }
+          foreach (var item in _db.Guests)
+          {
+              if (item.GuestID == Current.Customer.GuestID)
+              {
+                Current.Customer.FirstName = item.FirstName;
+                Current.Customer.LastName = item.LastName;
+              }
+          }
+
           return RedirectToAction("ViewReservation");
         }
         

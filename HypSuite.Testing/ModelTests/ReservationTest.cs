@@ -11,7 +11,7 @@ namespace HypSuite.Testing.ModelTests
       [Fact]
       public void TestRoomList()
       {
-        var sut = new Room(){RoomID = 1,MaxCapacity=4,LocationID=1,DailyRate=65.5M,NumberOfBathrooms=2,NumberOfBeds=4};
+        var sut = new Room(){RoomID = 1,MaxCapacity=4,LocationRefID=1,DailyRate=65.5M,NumberOfBathrooms=2,NumberOfBeds=4};
         sut.Available= new List<Room>();
         sut.Available.Add(sut);
         var actual = sut.Available[0].DailyRate;

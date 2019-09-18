@@ -4,14 +4,16 @@ using HypSuite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HypSuite.Data.Migrations
 {
     [DbContext(typeof(HypSuiteDBContext))]
-    partial class HypSuiteDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190918014027_migration13")]
+    partial class migration13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -169,9 +171,9 @@ namespace HypSuite.Data.Migrations
 
                     b.Property<int>("NumberOfBeds");
 
-                    b.Property<int?>("ReservationRefID");
+                    b.Property<int?>("ReservationID");
 
-                    b.Property<int?>("ReservationRefId");
+                    b.Property<int?>("ReservationId");
 
                     b.Property<int>("SizeSqFt");
 
@@ -179,7 +181,7 @@ namespace HypSuite.Data.Migrations
 
                     b.HasIndex("LocationRefID");
 
-                    b.HasIndex("ReservationRefId");
+                    b.HasIndex("ReservationId");
 
                     b.ToTable("Rooms");
                 });
@@ -225,9 +227,9 @@ namespace HypSuite.Data.Migrations
                         .HasForeignKey("LocationRefID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("HypSuite.Domain.Models.Reservation", "ReservationRef")
+                    b.HasOne("HypSuite.Domain.Models.Reservation", "Reservation")
                         .WithMany("Rooms")
-                        .HasForeignKey("ReservationRefId");
+                        .HasForeignKey("ReservationId");
                 });
 #pragma warning restore 612, 618
         }

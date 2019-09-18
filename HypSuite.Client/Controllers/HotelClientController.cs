@@ -59,7 +59,7 @@ namespace HypSuite.Client.Controllers
           CurrentLocation.LocationList = new List<Location>();
           foreach (var l in _db.Locations)
           {
-            if(CurrentClient.ClientID == l.ClientID){
+            if(CurrentClient.ClientID == l.ClientLocationsID){
               CurrentClient.Locations.Add(l);
               CurrentLocation.LocationList.Add(l);
             }           
@@ -86,8 +86,8 @@ namespace HypSuite.Client.Controllers
           if(ModelState.IsValid)
           {
             try{
-                room.LocationID = CurrentLocation.LocationID;
-                room.ReservationID = null;
+                room.LocationRefID = CurrentLocation.LocationID;
+                room.ReservationRefID = null;
                 _db.Rooms.Add(room);
                 _db.SaveChanges();  
                 return RedirectToAction("ClientPortal");
@@ -108,7 +108,7 @@ namespace HypSuite.Client.Controllers
           CurrentLocation.LocationList = new List<Location>();
           foreach (var l in _db.Locations)
           {
-            if(CurrentClient.ClientID == l.ClientID){
+            if(CurrentClient.ClientID == l.ClientLocationsID){
               CurrentClient.Locations.Add(l);
               CurrentLocation.LocationList.Add(l);
             }           
@@ -145,7 +145,7 @@ namespace HypSuite.Client.Controllers
         public IActionResult CreateLocation(Location location)
         {
             try{
-                location.ClientID = CurrentClient.ClientID;
+                location.ClientLocationsID = CurrentClient.ClientID;
                 CurrentLocation = new Location();
                 CurrentLocation = location;
                 _db.Locations.Add(location);

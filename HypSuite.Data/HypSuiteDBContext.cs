@@ -24,7 +24,9 @@ namespace HypSuite.Data
       builder.Entity<HotelClient>().HasKey(h=>h.ClientID);
       builder.Entity<HotelClient>().HasMany(h=>h.Locations);
       builder.Entity<HotelClient>().HasMany(h=>h.GuestList);
+      builder.Entity<HotelClient>().HasMany(h=>h.ReservationHistory);
       builder.Entity<Reservation>().HasMany(h=>h.Rooms);
+      builder.Entity<Reservation>().HasKey(h=>h.ReservationID);
       builder.Entity<HotelClient>().HasIndex(u => u.Name).IsUnique();
       builder.Entity<Location>().HasKey(l=>l.LocationID);
       builder.Entity<Location>().HasMany(l=>l.Rooms);

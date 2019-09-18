@@ -74,11 +74,11 @@ namespace HypSuite.Testing.ModelTests
       {
         var sut = new GuestController();
         GuestController.Current = new Reservation();
-        GuestController.Current.HotelsLocation = new Location{ClientID=1};
+        GuestController.Current.HotelsLocation = new Location{ClientLocationsID=1};
         GuestController.CurrentGuest = new Guest();
         Guest g =new Guest{FirstName="o", LastName="p",PartySize=2};
         var view = sut.GuestInformation(g);
-        var actual = GuestController.CurrentGuest.ClientID;
+        var actual = GuestController.CurrentGuest.ClientGuestsID;
       //When
         var expected = 1;
       //Then

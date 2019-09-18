@@ -19,14 +19,14 @@ namespace HypSuite.Domain.Models
         public int SizeSqFt {get;set;}
         [Required]
         public decimal DailyRate{get;set;}
-        [ForeignKey("ReservationID")]
-        [NotMapped]
-        public int? ReservationID{get;set;}
+        public int? ReservationRefID{get;set;}
+        public Reservation ReservationRef {get;set;}
+
         public bool IsOccupied {get;set;}
         [NotMapped]
         public List<Room> Available {get;set;}
-        [ForeignKey("ClientID")]
-        public int LocationID { get; set; }
+        public int LocationRefID {get;set;}
+        public Location Location { get; set; }
 
         public override string ToString()
         {

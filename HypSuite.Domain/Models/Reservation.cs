@@ -9,8 +9,10 @@ namespace HypSuite.Domain.Models
     {
         [Key]
         public int ReservationID { get; set; }
-        [ForeignKey("GuestID")]
+        [ForeignKey("Customer")]
+        public int GuestID {get;set;}
         public Guest Customer {get;set;}
+        [ForeignKey("ReservationRefId")]
         public List<Room> Rooms { get; set; }
         [Required]
         public int NumberOfGuests { get; set; }
@@ -18,8 +20,13 @@ namespace HypSuite.Domain.Models
         public string CheckInDate {get;set;}
         [Required]
         public string CheckOutDate {get;set;}
+        [ForeignKey("HotelsLocation")]
+        public int LocationID {get;set;}
         public Location HotelsLocation {get;set;}
         public decimal Total { get; set; }
+
+        public int ClientHistoryID { get; set; }
+        public HotelClient Client {get;set;}
 
         public decimal CalculateReservationCost()
         {

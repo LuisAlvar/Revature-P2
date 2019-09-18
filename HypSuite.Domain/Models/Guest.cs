@@ -13,16 +13,11 @@ namespace HypSuite.Domain.Models
         public string LastName { get; set; }
         [Required]
         public int PartySize {get;set;}
-        
-        [ForeignKey("ClientID")]
-        [NotMapped]
-        public int ClientID { get; set; }
-
+        public int ClientGuestsID { get; set; }
+        public HotelClient Client {get;set;}
         public override string ToString()
         {
           return $"{LastName}, {FirstName}";
         }
-
-
     }
 }

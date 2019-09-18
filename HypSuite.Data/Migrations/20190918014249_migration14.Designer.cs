@@ -4,14 +4,16 @@ using HypSuite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HypSuite.Data.Migrations
 {
     [DbContext(typeof(HypSuiteDBContext))]
-    partial class HypSuiteDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190918014249_migration14")]
+    partial class migration14
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -225,7 +227,7 @@ namespace HypSuite.Data.Migrations
                         .HasForeignKey("LocationRefID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("HypSuite.Domain.Models.Reservation", "ReservationRef")
+                    b.HasOne("HypSuite.Domain.Models.Reservation", "Reservation")
                         .WithMany("Rooms")
                         .HasForeignKey("ReservationRefId");
                 });
